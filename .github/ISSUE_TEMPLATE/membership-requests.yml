@@ -1,0 +1,66 @@
+name: Organization Membership Request
+description: Request membership in a Recap Time Squad-managed namespace
+#labels: [ "area/github-membership" ] # TODO
+title: "REQUEST: New membership for <your-GH/GitLab-SaaS-handle>"
+body:
+- id: github
+  type: input
+  attributes:
+    label: GitHub Username
+    placeholder: e.g. @example_user
+  validations:
+    required: true
+- id: org
+  type: dropdown
+  attributes:
+    label: Organization you are requesting membership in
+    multiple: true
+    options:
+    - RecapTime
+    - Community-Lores
+    - gitpodify
+    - code-server-boilerplates
+  validations:
+    required: true
+- id: requirements
+  type: checkboxes
+  attributes:
+    label: Requirements
+    options:
+    - label: I have reviewed the [community membership guidelines](https://go.rtapp.tk/community/membership-guidelines)
+      required: true
+    - label: I have enabled 2FA both [on my GitHub account](https://github.com/settings/security) and [GitLab.com account]()
+      required: true
+    - label: I am actively contributing to 1 or more Recap Time Squad projects
+      required: true
+    - label: I have atleast one primary sponsor and/or two secondary sponsors that meet the sponsor requirements listed in the community membership guidelines
+      required: true
+    - label: I have spoken to my sponsors ahead of this application, and they have agreed to sponsor my application
+      required: true
+    - label: "**OPTIONAL:** I have taken the [Inclusive Open Source Community Orientation course](https://training.linuxfoundation.org/training/inclusive-open-source-community-orientation-lfc102/)"
+- id: primarySponsor
+  type: input
+  attributes:
+    label: "Primary Sponsor"
+    description: GitHub/GitLab SaaS handle of your sponsor
+    placeholder: e.g. @sponsor-1
+  validations:
+    required: true
+- id: secondarySponsor
+  type: input
+  attributes:
+    label: "Secondary Sponsors"
+    description: GitHub/GitLab SaaS handle of your sponsor
+    placeholder: e.g. @sponsor-2
+  validations:
+    required: false
+- id: contributions
+  type: textarea
+  attributes:
+    label: List of contributions to the Kubernetes project
+    placeholder: |
+      - PRs reviewed / authored
+      - Issues responded to
+      - SIG projects I am involved with
+  validations:
+    required: true
