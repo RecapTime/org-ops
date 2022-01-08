@@ -7,6 +7,7 @@ body:
   type: input
   attributes:
     label: GitHub Username
+    description: "Your GitHub username should matched your GitLab SaaS username. If you don't have one, sign up using your GitHub account."
     placeholder: e.g. @example_user
   validations:
     required: true
@@ -29,9 +30,9 @@ body:
     options:
     - label: I have reviewed the [community membership guidelines](https://go.rtapp.tk/community/membership-guidelines)
       required: true
-    - label: I have enabled 2FA both [on my GitHub account](https://github.com/settings/security) and [GitLab.com account]()
+    - label: I have enabled 2FA both [on my GitHub account](https://github.com/settings/security) and [GitLab.com account](https://gitlab.com/-/profile/two_factor_auth)
       required: true
-    - label: I am actively contributing to 1 or more Recap Time Squad projects
+    - label: I am actively contributing to 1 or more Recap Time Squad projects (includes Gitpodify, Code server Boilerplates and Community Lores)
       required: true
     - label: I have atleast one primary sponsor and/or two secondary sponsors that meet the sponsor requirements listed in the community membership guidelines
       required: true
@@ -42,25 +43,25 @@ body:
   type: input
   attributes:
     label: "Primary Sponsor"
-    description: GitHub/GitLab SaaS handle of your sponsor
+    description: GitHub/GitLab SaaS handle of your primary sponsor.
     placeholder: e.g. @sponsor-1
   validations:
     required: true
-- id: secondarySponsor
+- id: secondarySponsors
   type: input
   attributes:
     label: "Secondary Sponsors"
-    description: GitHub/GitLab SaaS handle of your sponsor
-    placeholder: e.g. @sponsor-2
+    description: GitHub/GitLab SaaS handle of your secondary sponsor. Leave it blank if none.
+    placeholder: e.g. @sponsor-2, @sponsor-3
   validations:
     required: false
 - id: contributions
   type: textarea
   attributes:
-    label: List of contributions to the Kubernetes project
+    label: List of contributions to Recap Time squad-maintained projects
     placeholder: |
       - PRs reviewed / authored
       - Issues responded to
-      - SIG projects I am involved with
+      - Other stuff goes here
   validations:
     required: true
